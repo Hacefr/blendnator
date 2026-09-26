@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Anim Studio (R6)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Three.js and OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Top Toolbar -->
+        <div id="toolbar">
+            <button id="add-r6">Add R6 Rig</button>
+            <button id="add-prop">Add Prop</button>
+            <button id="add-light">Add Light</button>
+            <button id="import-audio">Import Audio</button>
+            <button id="import-bg">Import 2D Stage</button>
+            <button id="load-roblox">Load Roblox Skin</button>
+            <button id="load-mc">Load MC Skin</button>
+        </div>
+
+        <div id="main-area">
+            <!-- Left Sidebar (Properties/Hierarchy) -->
+            <div id="sidebar">
+                <h3>Explorer</h3>
+                <ul id="hierarchy">
+                    <!-- Dynamic objects will appear here -->
+                </ul>
+                <h3>Properties</h3>
+                <div class="prop-group">
+                    <label>Position X</label>
+                    <input type="number" id="pos-x" value="0">
+                </div>
+            </div>
+
+            <!-- 3D Viewport -->
+            <div id="viewport"></div>
+        </div>
+
+        <!-- Bottom Timeline (Moon Animator Style) -->
+        <div id="timeline-container">
+            <div id="timeline-header">
+                <button>Play</button>
+                <button>Stop</button>
+                <span style="margin-left: 20px;">Time: 0:00</span>
+            </div>
+            <div id="timeline-tracks">
+                <!-- Track List (Left) -->
+                <div id="track-names">
+                    <div class="track-name">R6_Rig.Head</div>
+                    <div class="track-name">R6_Rig.RightArm</div>
+                </div>
+                <!-- Keyframes (Right) -->
+                <div id="track-keyframes">
+                    <div class="time-ruler">
+                        <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span>
+                    </div>
+                    <div class="track-row"><div class="keyframe" style="left: 50px;"></div></div>
+                    <div class="track-row"><div class="keyframe" style="left: 150px;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
